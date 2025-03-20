@@ -1,0 +1,13 @@
+
+.item{
+	max-width: calc(25% - 20px);
+	margin-bottom: 50px;
+	margin-top: 50px;
+	background-color: rgba(233, 230, 230, 0.746);
+	padding:  1%;
+	border-radius: 10px 10px 0 0;
+	position: relative;
+	padding-bottom: 2%;
+	overflow: hidden;
+	margin-inline: 10px;
+}
