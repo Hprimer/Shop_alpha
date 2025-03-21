@@ -13,15 +13,14 @@
     "static/js/main.233d08d0.js"
 =======
     "main.css": "/Shop_alpha/static/css/main.aa357f24.css",
-    "main.js": "/Shop_alpha/static/js/main.984faffc.js",
+    "main.js": "/Shop_alpha/static/js/main.9d430a0a.js",
     "static/media/room.jpeg": "/Shop_alpha/static/media/room.0ff93f2c2f58dc47bf57.jpeg",
     "index.html": "/Shop_alpha/index.html",
     "main.aa357f24.css.map": "/Shop_alpha/static/css/main.aa357f24.css.map",
-    "main.984faffc.js.map": "/Shop_alpha/static/js/main.984faffc.js.map"
+    "main.9d430a0a.js.map": "/Shop_alpha/static/js/main.9d430a0a.js.map"
   },
   "entrypoints": [
     "static/css/main.aa357f24.css",
     "static/js/main.984faffc.js"
->>>>>>> 83d5450 (build)
   ]
 }
