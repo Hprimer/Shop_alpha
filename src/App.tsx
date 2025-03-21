@@ -147,9 +147,10 @@ const App: React.FC = () => {
               </>
             } 
           /> */}
-          <Route path="/Shop/products"  element={<Main />}/>
-          <Route path="/Shop/cart"  element={<Cart />}/>
-          <Route path="/Shop/product/:id" element={<Product />}/>
+          <Route path="/" element={<Navigate to="/products"/>}/>
+          <Route path="/products"  element={<Main />}/>
+          <Route path="/cart"  element={<Cart />}/>
+          <Route path="/product/:id" element={<Product />}/>
         </Routes>
       <Footer />
       </div>
