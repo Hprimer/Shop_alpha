@@ -17,18 +17,32 @@
 .item_link{
 	text-decoration: none;
 	color: black;
+	display: block;
+	height: 100%;
+	width: 100%;
 }
 
 .like{
 	color:  rgb(67, 124, 240);
-    font-size: 25px;
+  font-size: 25px;
 	cursor: pointer;
 	transition: all .5s ease;
 	position: absolute;
 	right: 20px;
 	bottom: 20px;
+
 }
 .like.active, .like:hover{
 	color: red;
 	transform: scale(1.05);
+}
+.delete-item_btn{
+	cursor: pointer;
+	color: red;
+	position: absolute;
+	bottom: 24px;
+	transition: all .5s ease;
+}
+.delete-item_btn:hover{
+	transform: scale(1.1);
 }

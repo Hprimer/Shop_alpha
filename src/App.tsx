@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
-
+import useStore from "./store/store"; 
 
 import Header from './Components/Header/Header';
 import itemsData from './data/products'
@@ -22,15 +22,15 @@ interface Product {
 	finish: string;
 }
 
-interface HeaderProps {
-  orders: Product[];
-  onDelete: (id: number) => void;
-}
+// interface HeaderProps {
+//   orders: Product[];
+//   onDelete: (id: number) => void;
+// }
 
 interface MainProps {
   onChoose: (category: string) => void;
-  items: Product[];
-  onAdd: (product: Product) => void;
+  // items: Product[];
+  // onAdd: (product: Product) => void;
 }
 
 interface CartProps {
@@ -41,9 +41,10 @@ interface CartProps {
     data: Product[];
   }
 const App: React.FC = () => {
-  const [items, setItems] = useState<Product[]>([]); // Все товары
-  const [currentItems, setCurrentItems] = useState<Product[]>([]); // Текущие товары на экране
-  const [orders, setOrders] = useState<Product[]>([]); // Корзина
+  // const [items, setItems] = useState<Product[]>([]); // Все товары
+  // const [currentItems, setCurrentItems] = useState<Product[]>([]); // Текущие товары на экране
+  // const [orders, setOrders] = useState<Product[]>([]); // Корзина
+  const { items, setItems, setCurrentItems, chooseCategory } = useStore();
 
   // Функция загрузки товаров
   useEffect(() => {
@@ -60,27 +61,29 @@ const App: React.FC = () => {
     };
   
     fetchData();
-  }, []);
+  }, [setItems, setCurrentItems]);
 
-  // Фильтрация по категориям
-  const chooseCategory = (category: string) => {
-    if (category === 'all') {
-      setCurrentItems(items);
-    } else {
-      setCurrentItems(items.filter(el => el.category === category));
-    }
-  };
-  // Удаление товара из корзины
-  const deleteOrder = (id: number) => {
-    setOrders(orders.filter(el => el.id !== id));
-  };
+  // // Фильтрация по категориям
+  // const chooseCategory = (category: string) => {
+  //   if (category === 'all') {
+  //     setCurrentItems(items);
+  //   } else {
+  //     setCurrentItems(items.filter(el => el.category === category));
+  //   }
+  // };
 
-  // Добавление товара в корзину
-  const addOrder = (item: Product) => {
-    if (!orders.some(el => el.id === item.id)) {
-      setOrders([...orders, item]);
-    }
-  };
+
+  // // Удаление товара из корзины
+  // const deleteOrder = (id: number) => {
+  //   setOrders(orders.filter(el => el.id !== id));
+  // };
+
+  // // Добавление товара в корзину
+  // const addOrder = (item: Product) => {
+  //   if (!orders.some(el => el.id === item.id)) {
+  //     setOrders([...orders, item]);
+  //   }
+  // };
 
   // return (
   //   <div className="App">
@@ -111,8 +114,10 @@ const App: React.FC = () => {
             path="/Shop/" 
             element={
               <>
-                <Header orders={orders} onDelete={deleteOrder} />
-                <Main onChoose={chooseCategory} items={currentItems} onAdd={addOrder} />
+                <Header 
+                // orders={orders} onDelete={deleteOrder} 
+                />
+                <Main />
                 <Footer />
               </>
             } 
@@ -123,8 +128,12 @@ const App: React.FC = () => {
             path="/Shop/cart" 
             element={
               <>
-                <Header orders={orders} onDelete={deleteOrder} />
-                <Cart orders={orders} onDelete={deleteOrder} />
+                <Header 
+                // orders={orders} onDelete={deleteOrder} 
+                />
+                <Cart 
+                // orders={orders} onDelete={deleteOrder} 
+                />
                 <Footer />
               </>
             } 

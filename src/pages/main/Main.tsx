@@ -2,6 +2,7 @@ import React from 'react'
 import Presentation from '../../Components/Presentation/Presentation'
 import Categories from '../../Components/Categories/Categories'
 import Items from '../../Components/Items/Items'
+import useStore from "./../../store/store";
 
 
 interface Product {
@@ -16,8 +17,8 @@ interface Product {
 }
 interface MainProps {
   onChoose: (category: string) => void;
-  items: Product[];
-  onAdd: (product: Product) => void;
+  // items: Product[];
+  // onAdd: (product: Product) => void;
 }
 interface CategoriesProps {
   onChoose: (category: string) => void;
@@ -27,13 +28,18 @@ interface ItemsProps {
   onAdd: (product: Product) => void;
 }
 
-const Main: React.FC<MainProps> = ({ onChoose, items, onAdd }) => {
+// const Main: React.FC<MainProps> = ({ onChoose, items, onAdd }) => {
+const Main: React.FC = () => {
+  const { currentItems, chooseCategory, addOrder } = useStore();
+
 	return (
 		<>
 			<Presentation/>
 			<div className='categ_items container'>
-				<Categories onChoose={onChoose} />
-				<Items items={items} onAdd={onAdd} />
+				<Categories onChoose={chooseCategory} />
+				<Items 
+        // items={currentItems} onAdd={addOrder} 
+        />
 			</div>
 		</>
 	)

@@ -3,6 +3,7 @@ import { FaShoppingCart } from "react-icons/fa";
 
 import './Header.css'
 import { Link } from 'react-router';
+import useStore from '../../store/store';
 
 interface Product {
   id: number;
@@ -15,13 +16,16 @@ interface Product {
 	finish: string;
 }
 
-interface HeaderProps {
-  orders: Product[];
-  onDelete: (id: number) => void;
-}
+// interface HeaderProps {
+//   orders: Product[];
+//   onDelete: (id: number) => void;
+// }
 
 
-const Header: React.FC<HeaderProps> = ({ orders }) => {
+// const Header: React.FC<HeaderProps> = ({ orders }) => {
+const Header: React.FC = () => {
+  const { orders } = useStore();
+
 	
   return (
     <header className='container'>

@@ -1,5 +1,6 @@
 import React from 'react';
 import './Cart.css';
+import useStore from '../../store/store';
 
 interface Product {
   id: number;
@@ -12,10 +13,10 @@ interface Product {
 	finish: string;
 }
 
-interface CartProps {
-  orders: Product[];
-  onDelete: (id: number) => void;
-}
+// interface CartProps {
+//   orders: Product[];
+//   onDelete: (id: number) => void;
+// }
 // const Cart: React.FC<CartProps> = ({ onDelete, orders }) => {
 //   return (
 //     <div className='cart'>
@@ -42,7 +43,9 @@ interface CartProps {
 
 // export default Cart;
 
-const Cart: React.FC<CartProps> = ({ onDelete, orders }) => {
+// const Cart: React.FC<CartProps> = ({ onDelete, orders }) => {
+const Cart: React.FC = () => {
+  const {orders, deleteOrder} = useStore();
   return (
     <div className='cart'>
       <h2>Корзина</h2>
@@ -59,7 +62,9 @@ const Cart: React.FC<CartProps> = ({ onDelete, orders }) => {
               </div>
               <button
                 className='cart-item__delete-btn'
-                onClick={() => onDelete(order.id)}
+                // onClick={() => onDelete(order.id)}
+                onClick={() => deleteOrder(order.id)}
+
               >
                 Удалить
               </button>
