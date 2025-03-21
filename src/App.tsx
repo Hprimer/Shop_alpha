@@ -10,16 +10,24 @@ import Main from "./pages/main/Main";
 import Registration from "./pages/Registration/Registration";
 import Cart from "./pages/Cart/Cart";
 import Login from "./pages/Login/Login";
+import Product from "./pages/Product/Product";
 
 interface Product {
-  id: number;
+  id: string;
   name: string;
   image_path: string;
   desc: string;
-	wood_type: string;
+  wood_type: string;
   category: string;
-  price: string;  
-	finish: string;
+  price: string;
+  finish: string;
+  description: string;
+  dimensions: {
+    depth: number;
+    width: number;
+    height: number;
+  };
+  weight: number;
 }
 
 // interface HeaderProps {
@@ -107,10 +115,11 @@ const App: React.FC = () => {
   return (     
     <>    
     <Router>
-      <div className="App">                     
+      <div className="App">      
+      <Header />               
         <Routes>
           {/* Главная страница с товарами */}
-          <Route 
+          {/* <Route 
             path="/Shop/" 
             element={
               <>
@@ -121,10 +130,10 @@ const App: React.FC = () => {
                 <Footer />
               </>
             } 
-          />
+          /> */}
 
           {/* Страница корзины */}
-           <Route 
+          {/* <Route 
             path="/Shop/cart" 
             element={
               <>
@@ -137,8 +146,12 @@ const App: React.FC = () => {
                 <Footer />
               </>
             } 
-          />
+          /> */}
+          <Route path="/Shop/products"  element={<Main />}/>
+          <Route path="/Shop/cart"  element={<Cart />}/>
+          <Route path="/Shop/product/:id" element={<Product />}/>
         </Routes>
+      <Footer />
       </div>
     </Router>
     </>

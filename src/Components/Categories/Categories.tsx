@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
 
 import './categories.css'
+import useStore from '../../store/store';
 
-interface CategoriesProps {
-  onChoose: (category: string) => void;
-}
-const Categories: React.FC<CategoriesProps> = ({ onChoose }) => {
+// interface CategoriesProps {
+//   onChoose: (category: string) => void;
+// }
+// const Categories: React.FC<CategoriesProps> = ({ onChoose }) => {
+const Categories: React.FC = () => {
+
+	const { chooseCategory } = useStore();
   const [categories] = useState([
     { key: "all", name: "Все" },
     { key: "sofa", name: "Диваны" },
@@ -25,7 +29,7 @@ const Categories: React.FC<CategoriesProps> = ({ onChoose }) => {
 				{categories.map(el =>
 					<div 
 					key={el.key} className='category col' 
-					onClick={() => onChoose(el.key)}> {el.name} </div>
+					onClick={() => chooseCategory(el.key)}> {el.name} </div>
 				)}
 			</div>			
 		</div>

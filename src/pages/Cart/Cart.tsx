@@ -2,16 +2,23 @@ import React from 'react';
 import './Cart.css';
 import useStore from '../../store/store';
 
-interface Product {
-  id: number;
-  name: string;
-  image_path: string;
-  desc: string;
-	wood_type: string;
-  category: string;
-  price: string;  
-	finish: string;
-}
+// interface Product {
+  // id: string;
+  // name: string;
+  // image_path: string;
+  // desc: string;
+  // wood_type: string;
+  // category: string;
+  // price: string;
+  // finish: string;
+  // description: string;
+  // dimensions: {
+  //   depth: number;
+  //   width: number;
+  //   height: number;
+  // };
+  // weight: number;
+// }
 
 // interface CartProps {
 //   orders: Product[];

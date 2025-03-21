@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 
 interface Product {
-  id: number;
+  id: string;
   name: string;
   image_path: string;
   desc: string;
@@ -9,6 +9,13 @@ interface Product {
   category: string;
   price: string;
   finish: string;
+  description: string;
+  dimensions: {
+    depth: number;
+    width: number;
+    height: number;
+  };
+  weight: number;
 }
 
 interface StoreState {
@@ -18,8 +25,8 @@ interface StoreState {
   setItems: (items: Product[]) => void;
   setCurrentItems: (items: Product[]) => void;
   addOrder: (item: Product) => void;
-  deleteOrder: (id: number) => void;
-  deleteItem:(id: number) => void;
+  deleteOrder: (id: string) => void;
+  deleteItem:(id: string) => void;
   chooseCategory: (category: string) => void;
 }
 

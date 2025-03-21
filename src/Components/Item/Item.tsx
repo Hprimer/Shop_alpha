@@ -7,14 +7,21 @@ import { Link } from 'react-router-dom';
 import useStore from '../../store/store';
 
 interface Product {
-  id: number;
+  id: string;
   name: string;
   image_path: string;
   desc: string;
-	wood_type: string;
+  wood_type: string;
   category: string;
-  price: string;  
-	finish: string;
+  price: string;
+  finish: string;
+  description: string;
+  dimensions: {
+    depth: number;
+    width: number;
+    height: number;
+  };
+  weight: number;
 }
 interface ItemProps {
 	item:Product;
@@ -53,7 +60,7 @@ const Item: React.FC<ItemProps> = ({item, onAdd}) =>{
 
 	return (
 		<div className='item col-12 col-md-4 col-lg-3 '>
-			<Link to='/Product/'  className='item_link'>		
+			<Link to={`/Shop/product/${item.id}`}  className='item_link'>		
 				<img src={item.image_path} alt={item.name}/>
 				<h2 className='item-h2'> {item.name} </h2>
 				<p>{item.wood_type}, {item.finish} finish</p>

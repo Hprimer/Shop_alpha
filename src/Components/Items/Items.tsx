@@ -5,23 +5,30 @@ import './items.css'
 import useStore from '../../store/store';
 
 interface Product {
-  id: number;
+  id: string;
   name: string;
   image_path: string;
   desc: string;
-	wood_type: string;
+  wood_type: string;
   category: string;
-  price: string;  
-	finish: string;
+  price: string;
+  finish: string;
+  description: string;
+  dimensions: {
+    depth: number;
+    width: number;
+    height: number;
+  };
+  weight: number;
 }
-interface ItemsProps {
-  items: Product[];
-  onAdd: (product: Product) => void;
-}
-interface ItemProps {
-	item:Product;
-	onAdd: (product: Product) => void;
-}
+// interface ItemsProps {
+//   items: Product[];
+//   onAdd: (product: Product) => void;
+// }
+// interface ItemProps {
+// 	item:Product;
+// 	onAdd: (product: Product) => void;
+// }
 const Items: React.FC = () =>{	
 
 // const Items: React.FC<ItemsProps> = ({items, onAdd}) =>{	

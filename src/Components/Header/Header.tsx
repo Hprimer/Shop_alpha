@@ -31,7 +31,7 @@ const Header: React.FC = () => {
     <header className='container'>
       <div className='containr navbarr'>
         <span className='logo col-4'>
-          <Link to='/Shop/' className='link'>
+          <Link to='/Shop/products' className='link'>
             Happy House
           </Link>
         </span>
