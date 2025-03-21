@@ -98,11 +98,47 @@ const App: React.FC = () => {
       <div className="App">      
       <Header />               
         <Routes>
+<<<<<<< HEAD
           <Route path="/Shop_alpha/" element={<Navigate to="/Shop_alpha/products"/>}/>
           <Route path="/Shop_alpha/products"  element={<Main />}/>
           <Route path="/Shop_alpha/cart"  element={<Cart />}/>
           <Route path="/Shop_alpha/create"  element={<Create />}/>
           <Route path="/Shop_alpha/product/:id" element={<Product_pg />}/>
+=======
+          {/* Главная страница с товарами */}
+          {/* <Route 
+            path="/Shop/" 
+            element={
+              <>
+                <Header 
+                // orders={orders} onDelete={deleteOrder} 
+                />
+                <Main />
+                <Footer />
+              </>
+            } 
+          /> */}
+
+          {/* Страница корзины */}
+          {/* <Route 
+            path="/Shop/cart" 
+            element={
+              <>
+                <Header 
+                // orders={orders} onDelete={deleteOrder} 
+                />
+                <Cart 
+                // orders={orders} onDelete={deleteOrder} 
+                />
+                <Footer />
+              </>
+            } 
+          /> */}
+          <Route path="/Shop_alpha/" element={<Navigate to="/Shop_alpha/products"/>}/>
+          <Route path="/Shop_alpha/products"  element={<Main />}/>
+          <Route path="/Shop_alpha/cart"  element={<Cart />}/>
+          <Route path="/Shop_alpha/product/:id" element={<Product />}/>
+>>>>>>> dbac692 (add Shop_alpha/)
         </Routes>
       <Footer />
       </div>
