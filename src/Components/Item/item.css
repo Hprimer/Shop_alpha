@@ -10,4 +10,25 @@
 	padding-bottom: 2%;
 	overflow: hidden;
 	margin-inline: 10px;
+	color: black;
+	
+
+}
+.item_link{
+	text-decoration: none;
+	color: black;
+}
+
+.like{
+	color:  rgb(67, 124, 240);
+    font-size: 25px;
+	cursor: pointer;
+	transition: all .5s ease;
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+}
+.like.active, .like:hover{
+	color: red;
+	transform: scale(1.05);
 }
