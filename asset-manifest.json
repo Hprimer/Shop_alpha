@@ -1,5 +1,6 @@
 {
   "files": {
+<<<<<<< HEAD
     "main.css": "/Shop_alpha/static/css/main.18114e08.css",
     "main.js": "/Shop_alpha/static/js/main.233d08d0.js",
     "static/media/room.jpeg": "/Shop_alpha/static/media/room.0ff93f2c2f58dc47bf57.jpeg",
@@ -10,5 +11,17 @@
   "entrypoints": [
     "static/css/main.18114e08.css",
     "static/js/main.233d08d0.js"
+=======
+    "main.css": "/Shop_alpha/static/css/main.aa357f24.css",
+    "main.js": "/Shop_alpha/static/js/main.984faffc.js",
+    "static/media/room.jpeg": "/Shop_alpha/static/media/room.0ff93f2c2f58dc47bf57.jpeg",
+    "index.html": "/Shop_alpha/index.html",
+    "main.aa357f24.css.map": "/Shop_alpha/static/css/main.aa357f24.css.map",
+    "main.984faffc.js.map": "/Shop_alpha/static/js/main.984faffc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aa357f24.css",
+    "static/js/main.984faffc.js"
+>>>>>>> 83d5450 (build)
   ]
 }
