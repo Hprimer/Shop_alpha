@@ -52,7 +52,7 @@ const Item: React.FC<ItemProps> = ({item, onAdd}) =>{
 
 	return (
 		<div className='item  '>
-			<Link to={`/Shop_alpha/product/${item.id}`}  className='item_link'>			
+			<Link to={`/Shop_alpha/product/${item.id}`}  className='item_link'>		
 				<img src={item.image_path} alt={item.name}/>
 				<h2 className='item-h2'> {item.name} </h2>
 				<p>{item.wood_type}, {item.finish} finish</p>
