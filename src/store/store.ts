@@ -28,6 +28,8 @@ interface StoreState {
   deleteOrder: (id: string) => void;
   deleteItem:(id: string) => void;
   chooseCategory: (category: string) => void;
+  toggleFavorite: (item: Product) => void;
+
 }
 
 const useStore = create<StoreState>((set) => ({
@@ -39,7 +41,6 @@ const useStore = create<StoreState>((set) => ({
   
   setItems: (items) => set({ items }), //все товары
 
-
   setCurrentItems: (currentItems) => set({ currentItems }),
 
   addOrder: (item) =>
@@ -49,7 +50,6 @@ const useStore = create<StoreState>((set) => ({
       }
       return state;
     }),
-
 
   deleteOrder: (id) =>
     set((state) => ({
@@ -62,7 +62,6 @@ const useStore = create<StoreState>((set) => ({
       currentItems: state.currentItems.filter((el) => el.id !== id),
     })),
   
-
   
   chooseCategory: (category) => //фильтрация товаров 
     set((state) => ({
@@ -71,6 +70,19 @@ const useStore = create<StoreState>((set) => ({
           ? state.items
           : state.items.filter((el) => el.category === category),
     })),
+
+  toggleFavorite: (item) =>
+    set((state) => {
+      const isInOrders = state.orders.some((order) => order.id === item.id);
+      if (isInOrders) {
+        // Если товар уже в корзине, удаляем его
+        return { orders: state.orders.filter((order) => order.id !== item.id) };
+      } else {
+        // Если товара нет в корзине, добавляем его
+        return { orders: [...state.orders, item] };
+      }
+    }),
+
 }));
 
 export default useStore;

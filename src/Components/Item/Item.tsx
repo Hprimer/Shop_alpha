@@ -30,8 +30,9 @@ interface ItemProps {
 const Item: React.FC<ItemProps> = ({item, onAdd}) =>{	
 // function Item({item, onAdd}) {
 	// const imgPath = require(`./img/${props.item.img}`).default;
-	const [isLiked, setIsLiked] = useState(false);
-	const {deleteItem, addOrder} = useStore()
+
+	// const [isLiked, setIsLiked] = useState(false);
+	const {deleteItem, addOrder, deleteOrder, toggleFavorite, orders} = useStore()
 
 	// const handleLike = () => {
 	//   setIsLiked(!isLiked);
@@ -46,17 +47,31 @@ const Item: React.FC<ItemProps> = ({item, onAdd}) =>{
     e.stopPropagation();
     callback();
   };
-  const handleLike = (e: React.MouseEvent) => {
-    stopTransition(e, () => {
-      setIsLiked(!isLiked);
-      addOrder(item);
-    });
-  };
+  // const handleLike = (e: React.MouseEvent) => {
+  //   stopTransition(e, () => {
+  //     setIsLiked(!isLiked);
+  //     addOrder(item);
+  //   });
+  // };
 	const handleDelete = (e: React.MouseEvent) => {
     stopTransition(e, () => {
       deleteItem(item.id);
+			deleteOrder(item.id)
     });
   };
+	const handleToggleFavorite  = (e: React.MouseEvent) => {
+		stopTransition(e, () => {
+			toggleFavorite(item);
+		})
+  };
+
+
+	// const handleToggleFavorite  = () => {
+  //   toggleFavorite(item)
+  // };
+
+  const isLiked = orders.some((order) => order.id === item.id);
+
 
 	return (
 		<div className='item col-12 col-md-4 col-lg-3 '>
@@ -67,7 +82,9 @@ const Item: React.FC<ItemProps> = ({item, onAdd}) =>{
 				<p><b>{item.price}$</b></p>
 			{/* </Link> */}
 				<div className={`like ${isLiked ? 'active' : ''}`} 
-					onClick={handleLike}
+					// 	onClick={handleLike}
+					onClick={handleToggleFavorite}
+				
 				><BiSolidLike/>
 				</div>
 				<div className='delete-item_btn'

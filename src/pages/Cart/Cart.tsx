@@ -54,10 +54,10 @@ import useStore from '../../store/store';
 const Cart: React.FC = () => {
   const {orders, deleteOrder} = useStore();
   return (
-    <div className='cart'>
-      <h2>Корзина</h2>
+    <div className='container cart'>
+      <h2>Избранное</h2>
       {orders.length === 0 ? (
-        <p>Ваша корзина пуста</p>
+        <p>В избранном пусто</p>
       ) : (
         <ul className='cart-list'>
           {orders.map((order) => (
