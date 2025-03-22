@@ -31,14 +31,15 @@ const Header: React.FC = () => {
     <header className='container'>
       <div className='containr navbarr'>
         <span className='logo col-4'>
-          <Link to='/Shop/products' className='link'>
+          
+          <Link to='/Shop_alpha/products' className='link'>
             Happy House
           </Link>
         </span>
         
         <ul className='nav col-8'>
           <li className='cart-link'>
-            <Link to="/Shop/cart" className='link'>
+            <Link to="/Shop_alpha/cart" className='link'>
               <FaShoppingCart /> 
 							 ({orders.length}) 
 							{/* {FaShoppingCart && <FaShoppingCart />}
