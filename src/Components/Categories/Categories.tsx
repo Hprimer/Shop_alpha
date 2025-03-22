@@ -15,12 +15,12 @@ const Categories: React.FC = () => {
     { key: "sofa", name: "Диваны" },
     { key: "lamp", name: "Лампы" },
 
-		{ key: "garden", name: "garden" },
-		{ key: "stool", name: "stool" },
-		{ key: "chair", name: "chair" },
-		{ key: "table", name: "table" },
-		{ key: "matress", name: "matress" },
-		{ key: "mirror", name: "mirror" },
+	{ key: "garden", name: "garden" },
+	{ key: "stool", name: "stool" },
+	{ key: "chair", name: "chair" },
+	{ key: "table", name: "table" },
+	{ key: "matress", name: "matress" },
+	{ key: "mirror", name: "mirror" },
 
   ]);
 	return (

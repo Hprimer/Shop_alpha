@@ -51,7 +51,7 @@ const Product:React.FC = () =>{
           // onClick={handleLike}
           onClick={handleToggleFavorite}
         >{isLiked ? 'Удалить из избранного' : 'Добавить в избранное'}</div>
-        {/* <button className="add_to_cart">Добавить в корзину</button> */}
+        {/* <div className='btn_to_products'> Вернуться на главную</div> */}
       </div>
       </div>
     </div>
