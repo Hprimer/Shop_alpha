@@ -1,7 +1,7 @@
 {
   "name": "shop-alpha",
   "version": "0.1.0",
-  "homepage": "https://hprimer.github.io/Shop_Alpha",
+  "homepage": "https://hprimer.github.io/Shop_alpha",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",

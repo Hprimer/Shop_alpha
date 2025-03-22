@@ -1,5 +1,7 @@
 import React from 'react'
 import { FaShoppingCart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
+
 
 import './Header.css'
 import { Link } from 'react-router';
@@ -40,7 +42,8 @@ const Header: React.FC = () => {
         <ul className='nav col-8'>
           <li className='cart-link'>
             <Link to="/Shop_alpha/cart" className='link'>
-              <FaShoppingCart /> 
+              {/* <FaShoppingCart />  */}
+              <FaHeart/>
 							 ({orders.length}) 
 							{/* {FaShoppingCart && <FaShoppingCart />}
               {orders.length > 0 && `(${orders.length})`} */}

@@ -13,6 +13,9 @@ body{
 	text-decoration: none;
 	color: black;
 }
+a{
+	text-decoration: none;
+}
 .wrapper{
 	width: 100%;
 	margin: 50px auto;
