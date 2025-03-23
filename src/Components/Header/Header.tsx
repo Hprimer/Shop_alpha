@@ -1,6 +1,8 @@
 import React from 'react'
 import { FaShoppingCart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
+import { FaPlusCircle } from "react-icons/fa";
+
 
 
 import './Header.css'
@@ -40,13 +42,14 @@ const Header: React.FC = () => {
         </span>
         
         <ul className='nav col-8'>
-          <li className='cart-link'>
-            <Link to="/Shop_alpha/cart" className='link'>
+          <li className='header-links'>
+            <Link to="/Shop_alpha/cart" className='link cart-link'>
               {/* <FaShoppingCart />  */}
               <FaHeart/>
 							 ({orders.length}) 
-							{/* {FaShoppingCart && <FaShoppingCart />}
-              {orders.length > 0 && `(${orders.length})`} */}
+            </Link>
+            <Link to='/Shop_alpha/create' className='link create-link'>
+                <FaPlusCircle/>
             </Link>
           </li>
         </ul>

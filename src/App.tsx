@@ -10,7 +10,8 @@ import Main from "./pages/main/Main";
 import Registration from "./pages/Registration/Registration";
 import Cart from "./pages/Cart/Cart";
 import Login from "./pages/Login/Login";
-import Product from "./pages/Product/Product";
+import Product_pg from "./pages/Product_pg/Product_pg";
+import Create from "./pages/Create/Create";
 
 interface Product {
   id: string;
@@ -21,7 +22,6 @@ interface Product {
   category: string;
   price: string;
   finish: string;
-  description: string;
   dimensions: {
     depth: number;
     width: number;
@@ -150,7 +150,8 @@ const App: React.FC = () => {
           <Route path="/Shop_alpha/" element={<Navigate to="/Shop_alpha/products"/>}/>
           <Route path="/Shop_alpha/products"  element={<Main />}/>
           <Route path="/Shop_alpha/cart"  element={<Cart />}/>
-          <Route path="/Shop_alpha/product/:id" element={<Product />}/>
+          <Route path="/Shop_alpha/create"  element={<Create />}/>
+          <Route path="/Shop_alpha/product/:id" element={<Product_pg />}/>
         </Routes>
       <Footer />
       </div>

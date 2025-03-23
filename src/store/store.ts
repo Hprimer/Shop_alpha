@@ -9,7 +9,6 @@ interface Product {
   category: string;
   price: string;
   finish: string;
-  description: string;
   dimensions: {
     depth: number;
     width: number;
@@ -22,9 +21,11 @@ interface StoreState {
   items: Product[];
   currentItems: Product[];
   orders: Product[];
+
   setItems: (items: Product[]) => void;
   setCurrentItems: (items: Product[]) => void;
   addOrder: (item: Product) => void;
+  addProductToList: (item: Product) => void;
   deleteOrder: (id: string) => void;
   deleteItem:(id: string) => void;
   chooseCategory: (category: string) => void;
@@ -50,6 +51,15 @@ const useStore = create<StoreState>((set) => ({
       }
       return state;
     }),
+
+    addProductToList:(item) => 
+      set((state) => {
+        if (!state.items.some((el) => el.id === item.id)){
+          return {items: [item, ...state.items] };
+        }
+        return state;
+      }),
+    
 
   deleteOrder: (id) =>
     set((state) => ({
@@ -82,6 +92,7 @@ const useStore = create<StoreState>((set) => ({
         return { orders: [...state.orders, item] };
       }
     }),
+
 
 }));
 

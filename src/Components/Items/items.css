@@ -9,6 +9,8 @@ main img{
 	border-radius: 10px;
 	transition: transform 500ms ease;
 	margin-bottom: 10px;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
 }
 main img:hover{
 	transform: scale(1.05);

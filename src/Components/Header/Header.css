@@ -13,18 +13,26 @@ header ul.nav{
 	display: flex;
 	justify-content: end;
 }
-header li{
+/* header li{
 	display: inline;
 	cursor: pointer;
 	padding-inline: 15px;
 	transition: opacity 500ms ease;
+	gap: 30px;
 }
 header li:hover{
 	opacity: 0.5;
-}
+} */
 header .logo{
 	font-weight: 600;
 	font-size: 20px;
+}
+.cart-link, .create-link{
+	transition: opacity 500ms ease;
+	margin-right: 20px;
+}
+.cart-link:hover, .create-link:hover{
+	opacity: 0.5;	
 }
 .block{
 	width: 100%;

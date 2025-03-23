@@ -4,7 +4,7 @@ import useStore from '../../store/store'
 import { useParams } from 'react-router-dom';
 
 // function Product() {
-const Product:React.FC = () =>{
+const Product_pg:React.FC = () =>{
   const {items} = useStore()
   const { id } = useParams<{ id: string }>();
   const product = items.find((item) => item.id === id);
@@ -34,7 +34,7 @@ const Product:React.FC = () =>{
       <div className="product_details col-5">
         <h1>{product.name}</h1>
         <p className="product_category">Category: {product.category}</p>
-        <p className="product_description">{product.description}</p>
+        <p className="product_description">{product.desc}</p>
         <div className="product_specs">
           <h2>Charackteristics:</h2>
           <ul>
@@ -59,4 +59,4 @@ const Product:React.FC = () =>{
   )
 }
 
-export default Product
+export default Product_pg
