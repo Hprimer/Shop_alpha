@@ -34,17 +34,16 @@ interface StoreState {
 }
 
 const useStore = create<StoreState>((set) => ({
-  items: [],
-  currentItems: [],
-  orders: [],
-  // products:[],
+  items: [],//все товары
+  currentItems: [],//товары определенной категории
+  orders: [],//избранное
 
   
-  setItems: (items) => set({ items }), //все товары
+  setItems: (items) => set({ items }), 
 
   setCurrentItems: (currentItems) => set({ currentItems }),
 
-  addOrder: (item) =>
+  addOrder: (item) =>//добавить в избранное
     set((state) => {
       if (!state.orders.some((el) => el.id === item.id)) {
         return { orders: [...state.orders, item] };
@@ -52,21 +51,21 @@ const useStore = create<StoreState>((set) => ({
       return state;
     }),
 
-    addProductToList:(item) => 
-      set((state) => {
-        if (!state.items.some((el) => el.id === item.id)){
-          return {items: [item, ...state.items] };
-        }
-        return state;
-      }),
+  addProductToList:(item) => //добавить в общий список
+    set((state) => {
+      if (!state.items.some((el) => el.id === item.id)){
+        return {items: [item, ...state.items] };
+      }
+      return state;
+    }),
     
 
-  deleteOrder: (id) =>
+  deleteOrder: (id) =>//удалить из избарнного 
     set((state) => ({
       orders: state.orders.filter((el) => el.id !== id),
     })),
   
-  deleteItem:(id) =>
+  deleteItem:(id) =>//удалить из всего списка товаров
     set((state) => ({
       items: state.items.filter((el) => el.id !== id),
       currentItems: state.currentItems.filter((el) => el.id !== id),

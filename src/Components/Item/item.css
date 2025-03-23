@@ -21,7 +21,9 @@
 	height: 100%;
 	width: 100%;
 }
-
+.item-price{
+	margin-bottom: 20px;
+}
 .like{
 	color:  rgb(67, 124, 240);
   font-size: 25px;

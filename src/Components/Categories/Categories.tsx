@@ -3,25 +3,21 @@ import React, { useState } from 'react'
 import './categories.css'
 import useStore from '../../store/store';
 
-// interface CategoriesProps {
-//   onChoose: (category: string) => void;
-// }
-// const Categories: React.FC<CategoriesProps> = ({ onChoose }) => {
-const Categories: React.FC = () => {
+
+const Categories = () => {
 
 	const { chooseCategory } = useStore();
   const [categories] = useState([
-    { key: "all", name: "Все" },
-    { key: "sofa", name: "Диваны" },
-    { key: "lamp", name: "Лампы" },
+    { key: "all", name: "all" },
+    { key: "sofa", name: "sofa" },
+    { key: "lamp", name: "lamp" },
 
-	{ key: "garden", name: "garden" },
-	{ key: "stool", name: "stool" },
-	{ key: "chair", name: "chair" },
-	{ key: "table", name: "table" },
-	{ key: "matress", name: "matress" },
-	{ key: "mirror", name: "mirror" },
-
+		{ key: "garden", name: "garden" },
+		{ key: "stool", name: "stool" },
+		{ key: "chair", name: "chair" },
+		{ key: "table", name: "table" },
+		{ key: "matress", name: "matress" },
+		{ key: "mirror", name: "mirror" },
   ]);
 	return (
 		<div className='categories container '>

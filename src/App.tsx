@@ -1,15 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, {  useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
 import useStore from "./store/store"; 
 
 import Header from './Components/Header/Header';
-import itemsData from './data/products'
-import Items from './Components/Items/Items';
+
 import Footer from './Components/Footer/Footer';
 import Main from "./pages/main/Main";
-import Registration from "./pages/Registration/Registration";
 import Cart from "./pages/Cart/Cart";
-import Login from "./pages/Login/Login";
 import Product_pg from "./pages/Product_pg/Product_pg";
 import Create from "./pages/Create/Create";
 
@@ -30,29 +27,14 @@ interface Product {
   weight: number;
 }
 
-// interface HeaderProps {
-//   orders: Product[];
-//   onDelete: (id: number) => void;
-// }
 
-interface MainProps {
-  onChoose: (category: string) => void;
-  // items: Product[];
-  // onAdd: (product: Product) => void;
-}
 
-interface CartProps {
-  orders: Product[];
-  onDelete: (id: number) => void;
+
+interface ApiResponse {
+  data: Product[];
 }
-  interface ApiResponse {
-    data: Product[];
-  }
 const App: React.FC = () => {
-  // const [items, setItems] = useState<Product[]>([]); // Все товары
-  // const [currentItems, setCurrentItems] = useState<Product[]>([]); // Текущие товары на экране
-  // const [orders, setOrders] = useState<Product[]>([]); // Корзина
-  const { items, setItems, setCurrentItems, chooseCategory } = useStore();
+  const { setItems, setCurrentItems } = useStore();
 
   // Функция загрузки товаров
   useEffect(() => {
@@ -70,8 +52,6 @@ const App: React.FC = () => {
   
     fetchData();
   }, [setItems, setCurrentItems]);
-
-  // // Фильтрация по категориям
   // const chooseCategory = (category: string) => {
   //   if (category === 'all') {
   //     setCurrentItems(items);
@@ -118,35 +98,6 @@ const App: React.FC = () => {
       <div className="App">      
       <Header />               
         <Routes>
-          {/* Главная страница с товарами */}
-          {/* <Route 
-            path="/Shop/" 
-            element={
-              <>
-                <Header 
-                // orders={orders} onDelete={deleteOrder} 
-                />
-                <Main />
-                <Footer />
-              </>
-            } 
-          /> */}
-
-          {/* Страница корзины */}
-          {/* <Route 
-            path="/Shop/cart" 
-            element={
-              <>
-                <Header 
-                // orders={orders} onDelete={deleteOrder} 
-                />
-                <Cart 
-                // orders={orders} onDelete={deleteOrder} 
-                />
-                <Footer />
-              </>
-            } 
-          /> */}
           <Route path="/Shop_alpha/" element={<Navigate to="/Shop_alpha/products"/>}/>
           <Route path="/Shop_alpha/products"  element={<Main />}/>
           <Route path="/Shop_alpha/cart"  element={<Cart />}/>

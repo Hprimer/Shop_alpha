@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { BiSolidLike } from "react-icons/bi";
 import { FaTrash } from "react-icons/fa";
 
@@ -15,7 +14,6 @@ interface Product {
   category: string;
   price: string;
   finish: string;
-  description: string;
   dimensions: {
     depth: number;
     width: number;
@@ -28,31 +26,15 @@ interface ItemProps {
 	onAdd: (product: Product) => void;
 }
 const Item: React.FC<ItemProps> = ({item, onAdd}) =>{	
-// function Item({item, onAdd}) {
-	// const imgPath = require(`./img/${props.item.img}`).default;
 
-	// const [isLiked, setIsLiked] = useState(false);
-	const {deleteItem, addOrder, deleteOrder, toggleFavorite, orders} = useStore()
+	const {deleteItem,  deleteOrder, toggleFavorite, orders} = useStore()
 
-	// const handleLike = () => {
-	//   setIsLiked(!isLiked);
-	// };
-	// const handleLike = (e: React.MouseEvent) => {
-  //   e.stopPropagation(); // Останавливаем всплытие события
-  //   setIsLiked(!isLiked);
-	// 	addOrder(item);
-  // };
   const stopTransition = (e: React.MouseEvent, callback: () => void) => {
     e.preventDefault();
     e.stopPropagation();
     callback();
   };
-  // const handleLike = (e: React.MouseEvent) => {
-  //   stopTransition(e, () => {
-  //     setIsLiked(!isLiked);
-  //     addOrder(item);
-  //   });
-  // };
+
 	const handleDelete = (e: React.MouseEvent) => {
     stopTransition(e, () => {
       deleteItem(item.id);
@@ -65,12 +47,7 @@ const Item: React.FC<ItemProps> = ({item, onAdd}) =>{
 		})
   };
 
-
-	// const handleToggleFavorite  = () => {
-  //   toggleFavorite(item)
-  // };
-
-  const isLiked = orders.some((order) => order.id === item.id);
+	const isLiked = orders.some((order) => order.id === item.id);
 
 
 	return (
@@ -79,20 +56,15 @@ const Item: React.FC<ItemProps> = ({item, onAdd}) =>{
 				<img src={item.image_path} alt={item.name}/>
 				<h2 className='item-h2'> {item.name} </h2>
 				<p>{item.wood_type}, {item.finish} finish</p>
-				<p><b>{item.price}$</b></p>
-			{/* </Link> */}
+				<p className='item-price'><b>{item.price}$</b></p>
 				<div className={`like ${isLiked ? 'active' : ''}`} 
-					// 	onClick={handleLike}
-					onClick={handleToggleFavorite}
-				
-				><BiSolidLike/>
+					onClick={handleToggleFavorite}>				
+					<BiSolidLike/>
 				</div>
 				<div className='delete-item_btn'
-				  onClick={handleDelete}
-				><FaTrash/>
-				</div>
-
-			
+				  onClick={handleDelete}>
+					<FaTrash/>
+				</div>			
 			</Link>
 		</div>
 

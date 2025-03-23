@@ -3,12 +3,10 @@ import "./Product.css"
 import useStore from '../../store/store'
 import { useParams } from 'react-router-dom';
 
-// function Product() {
-const Product_pg:React.FC = () =>{
+const Product_pg = () =>{
   const {items} = useStore()
   const { id } = useParams<{ id: string }>();
   const product = items.find((item) => item.id === id);
-  // const [isLiked, setIsLiked] = useState(false);
 	const {toggleFavorite, orders} = useStore()
 
   if (!product) {
@@ -16,10 +14,7 @@ const Product_pg:React.FC = () =>{
   }
 
   const isLiked = orders.some((order) => order.id === product.id);
-  // const handleLike = () => {
-  //   setIsLiked(!isLiked);
-  //   addOrder(product);
-  // };
+
   const handleToggleFavorite  = () => {
     toggleFavorite(product)
   };
@@ -48,10 +43,8 @@ const Product_pg:React.FC = () =>{
         </div>
         <p className="product_price">Price: ${product.price}</p>
         <div className={`add_to_likely_btn ${isLiked ? 'active' : ''}`}
-          // onClick={handleLike}
           onClick={handleToggleFavorite}
         >{isLiked ? 'Удалить из избранного' : 'Добавить в избранное'}</div>
-        {/* <div className='btn_to_products'> Вернуться на главную</div> */}
       </div>
       </div>
     </div>

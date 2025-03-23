@@ -1,7 +1,7 @@
 import React from 'react';
 import './footer.css';
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <footer>Все права защищены &copy;</footer>
   );
