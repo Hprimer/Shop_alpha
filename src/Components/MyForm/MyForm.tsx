@@ -64,6 +64,9 @@ export function MyForm (props: IMyFormProps) {
 		};
 
     addProductToList(newProduct);//добавление в store
+
+    alert('Элемент добавлен в список. Перейдите на главную и выберите нужную категорию для отображения элемента')
+
 		
 		//Очистка ввода 
 		setName('');
@@ -131,14 +134,12 @@ export function MyForm (props: IMyFormProps) {
       </label>
 			<label>
         Image:
-        <input type="file" required onChange={handleImageChange} />
+        <input type="file" accept="image/*" required onChange={handleImageChange} />
       </label>
 			<div className="image-preview">
           {image && <img src={URL.createObjectURL(image)} alt="Выбранное изображение" />}
         </div>
-      <button type="submit" onClick={() =>
-				alert('Элемент добавлен в список. Перейдите на главную и выберите нужную категорию для отображения элемента')
-			}>Добавить</button>
+      <button type="submit">Добавить</button>
     </form>
 
 	</>
