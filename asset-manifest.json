@@ -1,5 +1,6 @@
 {
   "files": {
+<<<<<<< HEAD
     "main.css": "/Shop_alpha/static/css/main.aa357f24.css",
     "main.js": "/Shop_alpha/static/js/main.9d430a0a.js",
     "static/media/room.jpeg": "/Shop_alpha/static/media/room.0ff93f2c2f58dc47bf57.jpeg",
@@ -10,5 +11,17 @@
   "entrypoints": [
     "static/css/main.aa357f24.css",
     "static/js/main.9d430a0a.js"
+=======
+    "main.css": "/Shop_alpha/static/css/main.18114e08.css",
+    "main.js": "/Shop_alpha/static/js/main.a830eae8.js",
+    "static/media/room.jpeg": "/Shop_alpha/static/media/room.0ff93f2c2f58dc47bf57.jpeg",
+    "index.html": "/Shop_alpha/index.html",
+    "main.18114e08.css.map": "/Shop_alpha/static/css/main.18114e08.css.map",
+    "main.a830eae8.js.map": "/Shop_alpha/static/js/main.a830eae8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.18114e08.css",
+    "static/js/main.a830eae8.js"
+>>>>>>> 712ea0b (fix type of file in form + build)
   ]
 }
