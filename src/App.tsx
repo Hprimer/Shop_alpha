@@ -138,7 +138,10 @@ const App: React.FC = () => {
           <Route path="/Shop_alpha/products"  element={<Main />}/>
           <Route path="/Shop_alpha/cart"  element={<Cart />}/>
           <Route path="/Shop_alpha/product/:id" element={<Product />}/>
+<<<<<<< HEAD
 >>>>>>> dbac692 (add Shop_alpha/)
+=======
+>>>>>>> caa8f2b3e824dd257e83d76649ac2330f0fbf97b
         </Routes>
       <Footer />
       </div>
