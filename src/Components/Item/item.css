@@ -1,6 +1,7 @@
 
 .item{
-	max-width: calc(25% - 20px);
+	/* max-width: calc(25% - 20px); */
+	max-width: 200px;
 	margin-bottom: 50px;
 	margin-top: 50px;
 	background-color: rgba(233, 230, 230, 0.746);
@@ -9,7 +10,7 @@
 	position: relative;
 	padding-bottom: 2%;
 	overflow: hidden;
-	margin-inline: 10px;
+	/* margin-inline: 10px; */
 	color: black;
 	
 
@@ -22,7 +23,7 @@
 	width: 100%;
 }
 .item-price{
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
 .like{
 	color:  rgb(67, 124, 240);
