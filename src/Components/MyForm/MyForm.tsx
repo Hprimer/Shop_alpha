@@ -66,7 +66,6 @@ export function MyForm (props: IMyFormProps) {
     addProductToList(newProduct);//добавление в store
 
     alert('Элемент добавлен в список. Перейдите на главную и выберите нужную категорию для отображения элемента')
-
 		
 		//Очистка ввода 
 		setName('');
@@ -138,7 +137,7 @@ export function MyForm (props: IMyFormProps) {
       </label>
 			<div className="image-preview">
           {image && <img src={URL.createObjectURL(image)} alt="Выбранное изображение" />}
-        </div>
+      </div>
       <button type="submit">Добавить</button>
     </form>
 

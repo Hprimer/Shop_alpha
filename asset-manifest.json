@@ -1,6 +1,7 @@
 {
   "files": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "main.css": "/Shop_alpha/static/css/main.aa357f24.css",
     "main.js": "/Shop_alpha/static/js/main.9d430a0a.js",
     "static/media/room.jpeg": "/Shop_alpha/static/media/room.0ff93f2c2f58dc47bf57.jpeg",
@@ -12,6 +13,8 @@
     "static/css/main.aa357f24.css",
     "static/js/main.9d430a0a.js"
 =======
+=======
+>>>>>>> 712ea0b55e8503b7076e966e1b61b48f33c90dbc
     "main.css": "/Shop_alpha/static/css/main.18114e08.css",
     "main.js": "/Shop_alpha/static/js/main.a830eae8.js",
     "static/media/room.jpeg": "/Shop_alpha/static/media/room.0ff93f2c2f58dc47bf57.jpeg",
@@ -22,6 +25,9 @@
   "entrypoints": [
     "static/css/main.18114e08.css",
     "static/js/main.a830eae8.js"
+<<<<<<< HEAD
 >>>>>>> 712ea0b (fix type of file in form + build)
+=======
+>>>>>>> 712ea0b55e8503b7076e966e1b61b48f33c90dbc
   ]
 }
